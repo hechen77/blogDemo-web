@@ -1,15 +1,14 @@
 export default {
-    namespaced:"userInfo",
-    state:{
-
+    namespaced: "userInfo",
+    state: {
+        userInfo: []
     },
-    mutations:{
-
+    mutations: {
+        SET_USERINFO(state,data){
+            state.userInfo = data;
+        }
     },
-    actions:{
-
+    actions: {
     },
-    getters:{
-
-    }
+    getters: {}
 }

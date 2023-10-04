@@ -10,3 +10,9 @@ import request from "@/http/request";
 * })
 *
 * */
+
+export const adminUserLoginAPI = (data) => request({
+    url:"user/admin/userLogin",
+    data:data,
+    methods:"POST"
+})
