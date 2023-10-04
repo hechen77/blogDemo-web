@@ -14,7 +14,7 @@ export class ArticleService {
     const data = await this.articleDB.save(createArticleDto);
     return {
       message: "添加成功！",
-      ortherData: {
+      otherData: {
         articleId: data.id
       }
     }
@@ -92,7 +92,7 @@ export class ArticleService {
         skip: (nowPage - 1) * limit,
         take: limit
       })
-      const count = await this.articleDB.count({
+      count = await this.articleDB.count({
         where: [
           {
             title: Like(`%${content}%`),
@@ -113,30 +113,33 @@ export class ArticleService {
   }
   // 搜索文章 By Type
   async findByType(type: number, limit: number, nowPage: number) {
-    const data = await this.articleDB.find({
-      where:
-      {
-        articleType: type,
-        status: 1
-      }
-      ,
-      order: {
-        sendTime: "DESC"
-      },
-      skip: (nowPage - 1) * limit,
-      take: limit
-    })
-    const count = await this.articleDB.count({
-      where:
-      {
-        articleType: type,
-        status: 1
-      }
-    });
-    return {
-      data,
-      otherData: {
-        count
+    let data, count;
+    if (type && limit && nowPage) {
+      const data = await this.articleDB.find({
+        where:
+        {
+          articleType: type,
+          status: 1
+        }
+        ,
+        order: {
+          sendTime: "DESC"
+        },
+        skip: (nowPage - 1) * limit,
+        take: limit
+      })
+      const count = await this.articleDB.count({
+        where:
+        {
+          articleType: type,
+          status: 1
+        }
+      });
+      return {
+        data,
+        otherData: {
+          count
+        }
       }
     }
   }
