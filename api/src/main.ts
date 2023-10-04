@@ -18,6 +18,6 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe())
 
   // 在2222端口启动
-  await app.listen(2222);
+  await app.listen(2023);
 }
 bootstrap();

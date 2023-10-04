@@ -7,6 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
+    "build-web": "nest build --webpack --webpackPath=./webpack.config.js",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start --watch",
     "start:dev": "nest start --watch",
@@ -28,6 +29,7 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "cors": "^2.8.5",
+    "fork-ts-checker-webpack-plugin": "^9.0.0",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^3.6.1",
     "reflect-metadata": "^0.1.13",
