@@ -1,5 +1,6 @@
 <template>
   <div>
+    <el-backtop target=".page-component__scroll .el-scrollbar__wrap"></el-backtop>
     <blogHeader></blogHeader>
     <div class="container1">
       <h1>自由的算法题</h1>
@@ -25,7 +26,7 @@ export default {
 
 <style scoped lang="less">
 .container1{
-  width: 1240px;
+  width: 80%;
   margin: 0 auto;
 }
 </style>
